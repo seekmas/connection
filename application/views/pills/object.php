@@ -6,7 +6,7 @@
 
 <form action="" method="post">
 
-	<p><textarea id="attitude" name="news"></textarea></p>
+	<p><textarea id="attitude" name="news"><?php if( isset( $current_object)){?>$<?php echo $current_object['object_name'];?><?php }?> </textarea></p>
 	<p><button class="btn btn-primary" name="post_status" value="1">Posts</button></p>
 
 </form>
