@@ -1,23 +1,43 @@
   $(function(){
+
+    var site_url = 'http://127.0.0.1/feast/';
+
     $('div.panel-body').mouseover( function(){
       $(this).find('small').css({'color' : '#000'});
     });
+    
     $('div.panel-body').mouseout( function() {
       $(this).find('small').css({'color' : ''});
     });
 
     $text = $('div.panel-body').has('.mot-title');
+    
     $.each($text , function(){
-      $(this).html( $(this).html().replace(/\@(\S+)/ , '<a href="#">@$1</a>'));
+      
+      var str = $(this).html().replace( /\@(\S+)/ , '<a href="#">@$1</a>');
+
+      str = str.replace( /\#(\S+)#/g , '<a href="'+site_url+'pills/object/$1">#$1#</a>');
+
+      $(this).html( str);
+
     });
 
     $text = $('div.panel-body').has('.mot-text');
+
     $.each( $text , function(){
-      var ori = $(this).find('h3 > small').html();
-      if( ori === undefined)
+      
+      var str = $(this).find('h3 > small').html();
+      
+      if( str === undefined)
+      
         return ;
-      str = ori.replace(/\@(\S+)/ , '<a href="#">@$1</a>');
+      
+      str = str.replace(/\@(\S+)/ , '<a href="#">@$1</a>');
+      
+      str = str.replace(/\#(\S+)#/ , '<a href="'+site_url+'pills/object/$1">#$1#</a>');
+
       $(this).find('.mot-text > small').html( str);
+
     });
 
     $('span.label.label-info').on('mouseover' , function(){
@@ -56,14 +76,6 @@
       $(this).removeClass('panel-hover');
     });
 
-    $('#attitude').fseditor({
-      placeholder: 'typeing your newsfeed',
-      transition: 'fade',
-      overlay: true,
-      maxWidth: 1020,
-      maxHeight: 450
-    });
-
     $('.user_link').on('mouseover' , function(){
       
       $(this).grumble({
@@ -75,5 +87,7 @@
       });
 
     });
+
+    $('.datetimepicker').datetimepicker();
 
   });

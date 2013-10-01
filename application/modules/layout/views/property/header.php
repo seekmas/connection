@@ -4,11 +4,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title><?php echo $template['title'];?></title>
+    <link href="<?php echo base_url('public/time-picker/css/datetimepicker.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('public/bootstrap/css/bootstrap.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('public/bootstrap/css/bootstrap-responsive.css');?>" rel="stylesheet">
-    <style>
-
-    </style>
     <link rel="stylesheet" href="<?php echo base_url('public/grumble/css/grumble.css?v=5');?>">
     <link href="<?php echo base_url('public/fseditor/fseditor.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('public/mot/mot.css');?>" rel="stylesheet">
@@ -23,7 +21,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Z</a>
+            <a class="navbar-brand" href="#">Z-po</a>
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -44,6 +42,7 @@
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+              <li><a href="<?php echo site_url( 'users/modify');?>"><?php echo $user['username'];?></a></li>
               <li class="active"><a href="<?php echo site_url( 'users/tiktok');?>">tiktok</a></li>
             </ul>
           </div><!--/.nav-collapse -->

@@ -15,17 +15,17 @@
 
 <ul class="nav nav-pills nav-justified">
   
-  <li><a href="#">Avatar</a></li>
+  <li><a href="<?php echo site_url('userset/avatar');?>">Avatar</a></li>
 
-  <li><a href="#">Attitude</a></li>
+  <li><a href="<?php echo site_url('userset/attitude');?>">Attitude</a></li>
 
-  <li><a href="#">PersonalDescription</a></li>
+  <li><a href="<?php echo site_url('userset/personaldescription');?>">PersonalDescription</a></li>
 
-  <li><a href="#">Groups</a></li>
+  <li><a href="<?php echo site_url('userset/groups');?>">Groups</a></li>
 
-  <li><a href="#">Believe</a></li>
+  <li><a href="<?php echo site_url('userset/belief');?>">Belief</a></li>
 
-  <li><a href="#">Habit</a></li>
+  <li><a href="<?php echo site_url('userset/habit');?>">Habit</a></li>
 
 </ul>
 

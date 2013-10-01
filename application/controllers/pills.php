@@ -41,19 +41,23 @@ class Pills extends CI_Controller
 
 		$post_list = $this->newsfeed_models->get_all_my( $page);
 
-		
-
 		$this->template->build('pills/index' , array('post_list'=>$post_list ));
 	}
 
 	public function object( $object )
 	{
 
+		$user = $this->status_models->get_status();
+		
+		$this->newsfeed_models->add_posts( $user['id']);
 
 		$current_object = $this->newsfeed_models->get_object( $object);
 
+		$post_list = $this->newsfeed_models->get_newsfeeds_by_object( $current_object['id']);
+
 		$this->template->build('pills/object' , array( 'current_object' => $current_object , 
-			)
+													   'post_list'		=>	$post_list ,
+													 )
 		);
 	}
 

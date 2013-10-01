@@ -5,8 +5,11 @@
 </div>
 
 <form action="" method="post">
-
-	<p><textarea id="attitude" name="news"><?php if( isset( $current_object)){?>$<?php echo $current_object['object_name'];?><?php }?> </textarea></p>
+  <?php if( isset( $current_object)){?>
+    <input name="object_name" value="<?php echo $current_object['object_name'];?>" type="hidden" />
+    <input name="object_id" value="<?php echo $current_object['id'];?>" type="hidden" />
+  <?php }?>
+	<p><textarea id="attitude" name="news"><?php if( isset( $current_object)){?>#<?php echo $current_object['object_name'];?>#<?php }?>    </textarea></p>
 	<p><button class="btn btn-primary" name="post_status" value="1">Posts</button></p>
 
 </form>
@@ -40,7 +43,7 @@
           <a href="<?php echo site_url('core/up/'.$post['id']);?>"><span class="label label-info">Up</span></a>
           </div>
 
-          <div class="col-md-5">
+          <div class="col-md-6">
             
           <a href="#" class="user_link" data-origin="<?php echo $post['uid'];?>">
             <img src="<?php echo site_url('uploads/demo.gif');?>" width="25px">
@@ -48,6 +51,7 @@
           </a>
 
           <span class="label label-primary">Published in <?php echo date( 'Y-m-d h:i:s' , $post['timecreated'] );?></span>
+          <a href="<?php echo site_url('core/up/'.$post['id']);?>"><span class="label label-default">Remove</span></a>
           </div>
 
         </div>

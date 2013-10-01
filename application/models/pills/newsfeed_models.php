@@ -28,13 +28,17 @@ class Newsfeed_models extends CI_Model
 				'uid' => $uid ,
 				'post_content' => $content , 
 				'timecreated' => time() ,
+				'object_id' => $this->input->post('object_id') ,
 			);
 
 
 
 			$this->db->insert( $this->posts , $post);
 
-			redirect( site_url('pills/index')); 			
+			if( $this->input->post('object_name'))
+				redirect( site_url('pills/object/'.$this->input->post('object_name'))); 			
+			else
+				redirect( site_url('pills/index'));
 		}
 	}
 
@@ -53,6 +57,16 @@ class Newsfeed_models extends CI_Model
 						->limit( 25 , 25 * ( $page - 1))
 						->order_by('id' , 'desc')
 						->get( $this->posts)->result_array();
+	}
+
+	public function get_newsfeeds_by_object( $object_id)
+	{
+		return $this->db->select( $this->posts.'.* , '.$this->members.'.username')
+						->where( array('object_id'=>$object_id))
+						->join( $this->members , $this->posts.'.uid='.$this->members.'.id' , 'left')
+						->order_by('id' , 'desc')
+						->get( $this->posts)
+						->result_array();
 	}
 
 	public function get_object( $object)
