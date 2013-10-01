@@ -18,7 +18,21 @@
 
 
 <div class="list-group">
-    <a href="<?php echo site_url('pills/index');?>" class="list-group-item<?php if( $this->uri->segment(2) === 'index'){?> active <?php }?>">MyStatus</a>
-    <a href="<?php echo site_url('pills/focus');?>" class="list-group-item<?php if( $this->uri->segment(2) === 'focus'){?> active <?php }?>">Friends&Focus</a>
-    <a href="<?php echo site_url('pills/publicmedia');?>" class="list-group-item<?php if( $this->uri->segment(2) === 'publicmedia'){?> active <?php }?>">PublicMedia</a>
+    <a href="<?php echo site_url('pills/index');?>" class="list-group-item<?php if( $this->uri->segment(2) === 'index'){?> active <?php }?>">
+        My Status
+    </a>
+
+    <a href="<?php echo site_url('pills/hotdiscussion');?>" class="list-group-item<?php if( $this->uri->segment(2) === 'hotdiscussion'){?> active <?php }?>">
+        Hot Discussion
+    </a>
+
+    <a href="<?php echo site_url('pills/focus');?>" class="list-group-item<?php if( $this->uri->segment(2) === 'focus'){?> active <?php }?>">
+        Friends & Focus
+    </a>
+
+    <a href="<?php echo site_url('pills/publicmedia');?>" class="list-group-item<?php if( $this->uri->segment(2) === 'publicmedia'){?> active <?php }?>">
+        Public Media
+    </a>
+
+
 </div>

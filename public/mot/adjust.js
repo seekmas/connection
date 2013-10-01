@@ -90,4 +90,12 @@
 
     $('.datetimepicker').datetimepicker();
 
+    $('.list-group-item').on('mouseover' , function(){
+      $(this).addClass('active');
+    });
+
+    $('.list-group-item').on('mouseout' , function(){
+      $(this).removeClass('active');
+    });
+
   });

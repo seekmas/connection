@@ -19,6 +19,7 @@ class Status_models extends CI_Model
 				 		 ->order_by( 'id' , 'desc')
 				 	     ->get( $this->status)
 				 		 ->row_array();
+				 		 
 		$u = $this->db->where( array('id'=>$user['userid']))
 					  ->get( $this->members)
 					  ->row_array();

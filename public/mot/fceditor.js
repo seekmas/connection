@@ -1,5 +1,5 @@
-    $('#attitude').fseditor({
-      placeholder: 'typeing your newsfeed',
+    $('textarea.attitude').fseditor({
+      placeholder: 'typeing your newsfeed/comments',
       transition: 'fade',
       overlay: true,
       maxWidth: 1020,

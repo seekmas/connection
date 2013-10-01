@@ -13,8 +13,12 @@ class Layout_property_module extends CI_Module{
 
 	public function header()
 	{
-		
-		$user = $this->status_models->get_status();
+		if( $this->session->userdata('user'))
+			
+			$user = $this->status_models->get_status();
+
+		else
+			$user = array('username' => 'Anonymous');
 
 		$this->load->view('property/header' , array('user'=>$user));
 	}

@@ -10,7 +10,8 @@
     <script src="<?php echo base_url('public/grumble/js/jquery.grumble.min.js?v=7');?>"></script>
     <script src="<?php echo base_url('public/time-picker/js/bootstrap-datetimepicker.min.js');?>"></script>
   	<script src="<?php echo site_url('public/mot/adjust.js');?>"></script>
-    <?php if( 'pills' === $this->uri->segment(1)) {?>
+    <?php if( preg_match('/^(core)|(pills(\/index)?)|(pills\/object)$/', $this->uri->segment(1).'/'.$this->uri->segment(2) ) || !$this->uri->segment(1)) {?>
+
     <script src="<?php echo site_url('public/mot/fceditor.js');?>"></script>
     <?php }?>
 </body>

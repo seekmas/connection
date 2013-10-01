@@ -81,4 +81,11 @@ class Newsfeed_models extends CI_Model
 				 		->get( $this->objects)
 				 		->row_array();
 	}
+
+	public function get_po_by_id( $id)
+	{
+		return $this->db->where( array('id'=>$id))
+						->get( $this->posts)
+						->row_array();
+	}
 }

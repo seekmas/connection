@@ -9,7 +9,7 @@
     <input name="object_name" value="<?php echo $current_object['object_name'];?>" type="hidden" />
     <input name="object_id" value="<?php echo $current_object['id'];?>" type="hidden" />
   <?php }?>
-	<p><textarea id="attitude" name="news"><?php if( isset( $current_object)){?>#<?php echo $current_object['object_name'];?>#<?php }?>    </textarea></p>
+	<p><textarea class="attitude" name="news"><?php if( isset( $current_object)){?>#<?php echo $current_object['object_name'];?>#<?php }?>    </textarea></p>
 	<p><button class="btn btn-primary" name="post_status" value="1">Posts</button></p>
 
 </form>
@@ -51,7 +51,9 @@
           </a>
 
           <span class="label label-primary">Published in <?php echo date( 'Y-m-d h:i:s' , $post['timecreated'] );?></span>
-          <a href="<?php echo site_url('core/up/'.$post['id']);?>"><span class="label label-default">Remove</span></a>
+          <?php if( $post['uid'] == $user['id']){?>
+          <a href="<?php echo site_url('core/remove/'.$post['id']);?>"><span class="label label-default">Remove</span></a>
+           <?php }?>
           </div>
 
         </div>

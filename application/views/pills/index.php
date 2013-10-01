@@ -8,7 +8,7 @@
   <?php if( isset( $current_object)){?>
     <input name="object_id" value="<?php echo $current_object['id'];?>" type="hidden" />
   <?php }?>
-	<p><textarea id="attitude" name="news"><?php if( isset( $current_object)){?>@<?php echo $current_object['object_name'];?><?php }?></textarea></p>
+	<p><textarea class="attitude" name="news"><?php if( isset( $current_object)){?>@<?php echo $current_object['object_name'];?><?php }?></textarea></p>
 	<p><button class="btn btn-primary" name="post_status" value="1">Posts</button></p>
 
 </form>
@@ -22,14 +22,14 @@
     <?php
     $pills = preg_split('/---/', $post['post_content']);
     ?>
-    <h3 class="mot-title"><?php echo strip_tags( $pills[0]);?> </h3>
-    <h4 class="mot-text">
+    <h5 class="mot-title"><?php echo strip_tags( $pills[0]);?> </h5>
+    <div class="mot-text">
       
       <?php if( isset( $pills[1])){?>
-      <pre><small>    <?php echo strip_tags( trim( $pills[1]));?></small></pre>
+      <pre>    <?php echo strip_tags( trim( $pills[1]));?></pre>
       <?php }?>
-      
-    </h4>
+    </div>
+
 
     <div class="panel panel-default ">
         <div class="panel-body row">
@@ -50,9 +50,9 @@
           </a>
 
           <span class="label label-primary">Published in <?php echo date( 'Y-m-d h:i:s' , $post['timecreated'] );?></span>
-
-          <a href="<?php echo site_url('core/up/'.$post['id']);?>"><span class="label label-default">Remove</span></a>
-
+          <?php if( $post['uid'] == $user['id']){?>
+          <a href="<?php echo site_url('core/remove/'.$post['id']);?>"><span class="label label-default">Remove</span></a>
+          <?php }?>
           </div>
 
         </div>

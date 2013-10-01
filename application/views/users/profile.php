@@ -3,7 +3,7 @@
 </div>
 
 <?php foreach ($objects as $obj) {?>
-	<a href="#"><span class="label label-info"><?php echo $obj['object_name'];?></span></a>
+	<a href="#"><span class="label label-info" style="line-height:30px;"><?php echo $obj['object_name'];?></span></a>
 <?php }?>
 <a href="#"> | more | </a>
 
@@ -39,26 +39,26 @@
 
 <div class="col-md-3">
 	<a href="#" class="thumbnail">
-	<img src="<?php echo site_url('uploads/demo.gif');?>">
+	<img src="<?php echo site_url('uploads/demo.jpg');?>">
 	</a>
 </div>
 
 <div class="col-md-3">
 	<a href="#" class="thumbnail">
-	<img src="<?php echo site_url('uploads/demo.gif');?>">
+	<img src="<?php echo site_url('uploads/demo.jpg');?>">
 	</a>
 </div>
 
 
 <div class="col-md-3">
 	<a href="#" class="thumbnail">
-	<img src="<?php echo site_url('uploads/demo.gif');?>">
+	<img src="<?php echo site_url('uploads/demo.jpg');?>">
 	</a>
 </div>
 
 <div class="col-md-3">
 	<a href="#" class="thumbnail">
-	<img src="<?php echo site_url('uploads/demo.gif');?>">
+	<img src="<?php echo site_url('uploads/demo.jpg');?>">
 	</a>
 </div>
 </div>
@@ -68,28 +68,28 @@
 <div class="row">
 <div class="col-md-3">
 	<a href="#" class="thumbnail">
-	<img src="<?php echo site_url('uploads/demo.gif');?>">
+	<img src="<?php echo site_url('uploads/demo.jpg');?>">
 	</a>
 </div>
 
 
 <div class="col-md-3">
 	<a href="#" class="thumbnail">
-	<img src="<?php echo site_url('uploads/demo.gif');?>">
+	<img src="<?php echo site_url('uploads/demo.jpg');?>">
 	</a>
 </div>
 
 
 <div class="col-md-3">
 	<a href="#" class="thumbnail">
-	<img src="<?php echo site_url('uploads/demo.gif');?>">
+	<img src="<?php echo site_url('uploads/demo.jpg');?>">
 	</a>
 </div>
 
 
 <div class="col-md-3">
 	<a href="#" class="thumbnail">
-	<img src="<?php echo site_url('uploads/demo.gif');?>">
+	<img src="<?php echo site_url('uploads/demo.jpg');?>">
 	</a>
 </div>
 
